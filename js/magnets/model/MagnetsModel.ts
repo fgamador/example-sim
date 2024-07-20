@@ -18,9 +18,11 @@ export default class MagnetsModel implements TModel {
 
   // initial bar magnet model element
   barMagnet: BarMagnet;
+  barMagnet2: BarMagnet;
 
   public constructor() {
     this.barMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 0, 0 ), 0 );
+    this.barMagnet2 = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 300, 100 ), 0 );
   }
 
   /**
@@ -29,6 +31,7 @@ export default class MagnetsModel implements TModel {
    */
   public reset(): void {
     this.barMagnet.reset();
+    this.barMagnet2.reset();
   }
 }
 

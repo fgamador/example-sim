@@ -55,6 +55,7 @@ export default class MagnetsControlPanel extends Panel {
       listener: () => {
         const orientation = model.barMagnet.orientationProperty.get() + Math.PI;
         model.barMagnet.orientationProperty.set( orientation );
+        model.barMagnet2.orientationProperty.set( orientation );
       }
     } );
 

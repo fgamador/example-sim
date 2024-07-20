@@ -44,6 +44,7 @@ export default class MagnetsScreenView extends ScreenView {
 
     // Add a magnet. The model determines its position.
     this.addChild( new BarMagnetNode( model.barMagnet, modelViewTransform ) );
+    this.addChild( new BarMagnetNode( model.barMagnet2, modelViewTransform ) );
 
     // Add the control panel for magnets, positioned at the top-right of the screen.
     this.addChild( new MagnetsControlPanel( model, {
