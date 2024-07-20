@@ -18,6 +18,7 @@ type StringsType = {
   };
   'magnetControlsStringProperty': LocalizedStringProperty;
   'flipPolarityStringProperty': LocalizedStringProperty;
+  'showBallStringProperty': LocalizedStringProperty;
 };
 
 const ExampleSimStrings = getStringModule( 'EXAMPLE_SIM' ) as StringsType;

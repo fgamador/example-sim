@@ -13,5 +13,8 @@
   },
   "flipPolarity": {
     "value": "Flip Polarity"
+  },
+  "showBall": {
+    "value": "Show Ball"
   }
 }

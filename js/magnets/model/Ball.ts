@@ -12,14 +12,17 @@ export default class Ball implements TModel {
 
   readonly diameter: number;
   positionProperty: Property<Vector2>;
+  visibleProperty: Property<boolean>;
 
   public constructor( diameter: number, position: Vector2 ) {
     this.diameter = diameter;
     this.positionProperty = new Property( position );
+    this.visibleProperty = new Property( true );
   }
 
   public reset(): void {
     this.positionProperty.reset();
+    this.visibleProperty.reset();
   }
 }
 

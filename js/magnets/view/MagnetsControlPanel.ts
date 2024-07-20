@@ -11,6 +11,7 @@
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
+import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import exampleSim from '../../exampleSim.js';
 import ExampleSimStrings from '../../ExampleSimStrings.js';
@@ -59,13 +60,19 @@ export default class MagnetsControlPanel extends Panel {
       }
     } );
 
+    const showBallCheckbox = new Checkbox( model.ball.visibleProperty, new Text( ExampleSimStrings.showBallStringProperty, {
+      font: new PhetFont( 16 )
+    } ), {
+    } );
+
     // The contents of the control panel
     const content = new VBox( {
       align: 'center',
       spacing: 10,
       children: [
         magnetControlsTitleNode,
-        flipPolarityButton
+        flipPolarityButton,
+        showBallCheckbox
       ]
     } );
 
