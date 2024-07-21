@@ -10,17 +10,18 @@ import exampleSim from '../../exampleSim.js';
 
 export default class Ball implements TModel {
 
-  readonly diameter: number;
+  diameterProperty: Property<number>;
   positionProperty: Property<Vector2>;
   visibleProperty: Property<boolean>;
 
   public constructor( diameter: number, position: Vector2 ) {
-    this.diameter = diameter;
+    this.diameterProperty = new Property( diameter );
     this.positionProperty = new Property( position );
     this.visibleProperty = new Property( true );
   }
 
   public reset(): void {
+    this.diameterProperty.reset();
     this.positionProperty.reset();
     this.visibleProperty.reset();
   }

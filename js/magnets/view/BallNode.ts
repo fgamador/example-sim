@@ -20,7 +20,7 @@ export default class BallNode extends ShadedSphereNode {
     assert && assert( ball instanceof Ball, 'invalid ball' );
     assert && assert( modelViewTransform instanceof ModelViewTransform2, 'invalid modelViewTransform' );
 
-    super( modelViewTransform.modelToViewDeltaX( ball.diameter ), {
+    super( modelViewTransform.modelToViewDeltaX( ball.diameterProperty ), {
       cursor: 'pointer'
     } );
 
@@ -30,6 +30,10 @@ export default class BallNode extends ShadedSphereNode {
       positionProperty: ball.positionProperty,
       transform: modelViewTransform
     } ) );
+
+    ball.diameterProperty.link( diameter => {
+      this.radius = diameter / 2;
+    } );
 
     // Observe changes in model position, and move this Node to the new position in the view.
     // This Property exists for the lifetime of the simulation, so this listener does not need to be unlinked.
