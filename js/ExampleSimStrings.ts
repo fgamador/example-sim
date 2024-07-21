@@ -17,6 +17,7 @@ type StringsType = {
     'particlesStringProperty': LocalizedStringProperty;
   };
   'magnetControlsStringProperty': LocalizedStringProperty;
+  'ballControlsStringProperty': LocalizedStringProperty;
   'flipPolarityStringProperty': LocalizedStringProperty;
   'showBallStringProperty': LocalizedStringProperty;
 };

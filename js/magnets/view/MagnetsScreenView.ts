@@ -18,6 +18,7 @@ import exampleSim from '../../exampleSim.js';
 import BarMagnetNode from './BarMagnetNode.js';
 import BallNode from './BallNode.js';
 import MagnetsControlPanel from './MagnetsControlPanel.js';
+import BallControlPanel from './BallControlPanel.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
@@ -52,6 +53,12 @@ export default class MagnetsScreenView extends ScreenView {
     this.addChild( new MagnetsControlPanel( model, {
       right: this.layoutBounds.right - ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
       top: this.layoutBounds.top + ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
+    } ) );
+
+    // Add the control panel for the ball, positioned at the bottom-left of the screen.
+    this.addChild( new BallControlPanel( model, {
+      left: this.layoutBounds.left + ExampleSimConstants.SCREEN_VIEW_X_MARGIN,
+      bottom: this.layoutBounds.bottom - ExampleSimConstants.SCREEN_VIEW_Y_MARGIN
     } ) );
 
     // Add the 'Reset All' button. This resets the simulation to its initial state. By PhET convention, this

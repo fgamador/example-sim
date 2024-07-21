@@ -11,6 +11,9 @@
   "magnetControls": {
     "value": "Magnet Controls"
   },
+  "ballControls": {
+    "value": "Ball Controls"
+  },
   "flipPolarity": {
     "value": "Flip Polarity"
   },
