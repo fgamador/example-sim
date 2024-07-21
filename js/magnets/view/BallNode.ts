@@ -7,22 +7,31 @@
  * @author Franz Amador
  */
 
-import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
+import ShadedSphereNode, { ShadedSphereNodeOptions } from '../../../../scenery-phet/js/ShadedSphereNode.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import { DragListener, Image, Node } from '../../../../scenery/js/imports.js';
 import exampleSim from '../../exampleSim.js';
 import Ball from '../model/Ball.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+
+type SelfOptions = EmptySelfOptions;
+type BallNodeOptions = SelfOptions & ShadedSphereNodeOptions;
 
 export default class BallNode extends ShadedSphereNode {
 
-  public constructor( ball: Ball, modelViewTransform: ModelViewTransform2 ) {
+  public constructor( ball: Ball, modelViewTransform: ModelViewTransform2, providedOptions?: BallNodeOptions ) {
 
     assert && assert( ball instanceof Ball, 'invalid ball' );
     assert && assert( modelViewTransform instanceof ModelViewTransform2, 'invalid modelViewTransform' );
 
-    super( modelViewTransform.modelToViewDeltaX( ball.diameterProperty ), {
-      cursor: 'pointer'
-    } );
+    const options = optionize<BallNodeOptions, SelfOptions, ShadedSphereNodeOptions>()( {
+
+      // ShadedSphereNodeOptions
+      cursor: 'pointer',
+      mainColor: 'yellow'
+    }, providedOptions );
+
+    super( modelViewTransform.modelToViewDeltaX( ball.diameterProperty ), options );
 
     // Move the ball by dragging it.
     this.addInputListener( new DragListener( {
